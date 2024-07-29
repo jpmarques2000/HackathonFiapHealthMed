@@ -19,8 +19,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
-    <Folder Include="Middleware\" />
+    <ProjectReference Include="..\Hackathon.HealthMed.Services\Hackathon.HealthMed.Services.csproj" />
   </ItemGroup>
 
 </Project>

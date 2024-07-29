@@ -1,4 +1,5 @@
 ﻿using Hackathon.HealthMed.Domain.Entities;
+using Hackathon.HealthMed.Domain.Interfaces.Repositories;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
