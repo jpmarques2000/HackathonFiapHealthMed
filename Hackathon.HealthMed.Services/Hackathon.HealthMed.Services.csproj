@@ -6,4 +6,14 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="Contract\" />
+    <Folder Include="Input\" />
+    <Folder Include="Interfaces\" />
+    <Folder Include="Shared\" />
+    <Folder Include="Services\" />
+    <Folder Include="Result\" />
+    <Folder Include="Profile\" />
+  </ItemGroup>
+
 </Project>
