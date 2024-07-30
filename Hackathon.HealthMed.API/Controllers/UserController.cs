@@ -1,6 +1,5 @@
 ﻿using Hackathon.HealthMed.Services.Input;
 using Hackathon.HealthMed.Services.Interfaces.Services;
-using Hackathon.HealthMed.Services.Services;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Hackathon.HealthMed.API.Controllers

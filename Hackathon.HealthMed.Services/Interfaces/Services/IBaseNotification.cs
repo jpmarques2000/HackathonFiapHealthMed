@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Hackathon.HealthMed.Services.Services
+namespace Hackathon.HealthMed.Services.Interfaces.Services
 {
     public interface IBaseNotification
     {

@@ -1,4 +1,7 @@
-﻿using Hackathon.HealthMed.Services.Services;
+﻿using Hackathon.HealthMed.Domain.Interfaces.Repositories;
+using Hackathon.HealthMed.Infraestructure.Repositories;
+using Hackathon.HealthMed.Services.Interfaces.Services;
+using Hackathon.HealthMed.Services.Services;
 using Hackathon.HealthMed.Services.Shared;
 using Microsoft.AspNetCore.Cors.Infrastructure;
 using Microsoft.Extensions.Configuration;
@@ -16,11 +19,14 @@ namespace Hackathon.HealthMed.Crosscutting
         public static IServiceCollection AddApplicationConfiguration(this IServiceCollection services, IConfiguration config)
         {
             services
-                .AddScoped<IBaseNotification, BaseNotification>();
+                .AddScoped<IBaseNotification, BaseNotification>()
 
+                .AddScoped<IPatientRepository, PatientRepository>()
+                .AddScoped<IUserRepository, UserRepository>();
 
-            //services
-            //    .AddScoped<IUserService, UserService>();
+            services
+                .AddScoped<IUserService, UserService>()
+                .AddScoped<IPatientService, PatientService>();
             return services;
         }
     }
