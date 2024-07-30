@@ -1,8 +1,8 @@
 ﻿using Hackathon.HealthMed.Services.Result;
-using Hackathon.HealthMed.Services.Services;
 using Microsoft.AspNetCore.Mvc.Infrastructure;
 using Microsoft.AspNetCore.Mvc;
 using System.Net;
+using Hackathon.HealthMed.Services.Interfaces.Services;
 
 namespace Hackathon.HealthMed.API
 {
