@@ -25,7 +25,12 @@ namespace Hackathon.HealthMed.Infraestructure
             //_configuration = configuration;
         }
         public DbSet<User> Users { get; set; }
+<<<<<<< HEAD
+        public DbSet<Medic> Medics { get; set; }
+        public DbSet<Schedule> Schedules { get; set; }
+=======
         public DbSet<Patient> Patient { get; set; }
+>>>>>>> e4224f7e48fff668bf51a552072fecfdcef300d7
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
