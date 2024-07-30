@@ -1,4 +1,4 @@
-﻿using Hackathon.HealthMed.Services.Input;
+using Hackathon.HealthMed.Services.Input;
 using Hackathon.HealthMed.Services.Interfaces.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
