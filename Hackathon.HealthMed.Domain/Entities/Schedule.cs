@@ -6,10 +6,8 @@ using System.Threading.Tasks;
 
 namespace Hackathon.HealthMed.Domain.Entities
 {
-    public class Schedule
+    public class Schedule : Entity
     {
-        public int Id { get; set; }
-
         public string Time { get; set; }
         public int MedicId { get; set; }
         public int AppointmentId { get; set; }
