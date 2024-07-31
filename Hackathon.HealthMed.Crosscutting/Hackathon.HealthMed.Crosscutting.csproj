@@ -20,6 +20,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Hackathon.HealthMed.Infraestructure\Hackathon.HealthMed.Infraestructure.csproj" />
     <ProjectReference Include="..\Hackathon.HealthMed.Services\Hackathon.HealthMed.Services.csproj" />
   </ItemGroup>
 
