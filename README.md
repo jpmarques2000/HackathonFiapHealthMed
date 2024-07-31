@@ -7,7 +7,7 @@ O objetivo deste software é permitir o cadastro de médicos e pacientes, juntam
 
 # Tecnologias implementadas
 
- - DOT NET 7
+ - .NET 7
 	 - ASP.NET WebApi
 	 - ASP.NET Identity Core
 	 - Entity Framework 7
