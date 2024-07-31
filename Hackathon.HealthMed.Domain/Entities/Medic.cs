@@ -14,6 +14,8 @@ namespace Hackathon.HealthMed.Domain.Entities
         public string CRM { get; set; }
         public string Email { get; set; }
         public string Password { get; set; }
+        //Campo de Test apenas para testar nossa pipeline CI/CD , remover depois
+        public string Test { get; set; }
         public ICollection<Schedule> Schedules { get; set; }
     }
 }
