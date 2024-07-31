@@ -1,0 +1,29 @@
+# Nome do meu WorkFlow
+name: CI / CD Pipeline Hackathon 
+
+# Quando que o WorkFlow será disparado
+on:
+  push:
+    branches: [ "main" ]
+    
+# Os jobs que o WorkFlow vai executar 
+jobs:
+  job_hackathon:
+    name: Executando o job do Hackathon FIAP
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    # Executando um comando com uma mensagem
+    - name: Step Mensagem Olá
+      run: echo Olá, esse é o hackathon da pós-tech Arquitetura de Sistemas .NET com Azure da FIAP
+
+    # Executando um comando com uma mensagem
+    - name: Step Mensagem Parabéns
+      run: echo Parabéns, desafio concluído!
+
+    # Executando um comando com uma mensagem
+    - name: Step Mensagem Hackathon
+      run: echo Legal, essa é a pipeline CI / CD desenvolvida para o Hackathon!
