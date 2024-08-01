@@ -9,16 +9,16 @@ using System.Threading.Tasks;
 
 namespace Hackathon.HealthMed.Infraestructure.Repositories
 {
-    public class MedicRepository : BaseRepository<Medic>, IMedicRepository
+    public class DoctorRepository : BaseRepository<Doctor>, IDoctorRepository
     {
-        public MedicRepository(ApplicationDbContext context) : base(context)
+        public DoctorRepository(ApplicationDbContext context) : base(context)
         {
 
         }
 
-        public async Task<IList<Medic>> ListAsync()
+        public async Task<IList<Doctor>> ListAsync()
         {
-            var result = await _context.Medics
+            var result = await _context.Doctors
                 .Include(x => x.Schedules)
                 .Where(x => x.Enabled == true)
                 .ToListAsync();
@@ -26,9 +26,9 @@ namespace Hackathon.HealthMed.Infraestructure.Repositories
             return result;
         }
 
-        public async Task<Medic> FindByIdAsync(int id)
+        public async Task<Doctor> FindByIdAsync(int id)
         {
-            var result = await _context.Medics
+            var result = await _context.Doctors
                 .Include(x => x.Schedules)
                 .Where(x => x.Id == id)
                 .Where(x => x.Enabled == true)

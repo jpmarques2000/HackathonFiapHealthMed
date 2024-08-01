@@ -30,7 +30,7 @@ namespace Hackathon.HealthMed.Crosscutting
                 options.SwaggerDoc("v1", new OpenApiInfo
                 {
                     Version = "1.0",
-                    Title = "TechChallenge - Automotive Mechanics - Plataforma de Gestão para Mecânica 100% Digital",
+                    Title = "Health&Med - Plataforma para Operadora de Saúde",
                 });
                 options.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
                 {
@@ -61,7 +61,7 @@ namespace Hackathon.HealthMed.Crosscutting
 
                 services.AddLogging();
                 var xmlFilename = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
-                options.IncludeXmlComments(Path.Combine(AppContext.BaseDirectory, "TechChallenge.AutomotiveMechanics.Presentation.API.xml"));
+                options.IncludeXmlComments(Path.Combine(AppContext.BaseDirectory, "Hackathon.HealthMed.API.xml"));
 
             });
 
