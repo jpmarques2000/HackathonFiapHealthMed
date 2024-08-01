@@ -8,12 +8,12 @@ using System.Threading.Tasks;
 
 namespace Hackathon.HealthMed.Services.Interfaces.Services
 {
-    public interface IMedicService
+    public interface IDoctorService
     {
-        Task<MedicResult> AddAsync(MedicInsertInput input);
+        Task<DoctorResult> AddAsync(DoctorInsertInput input);
         Task<bool> DeleteAsync(int id);
-        Task<MedicResult> FindByIdAsync(int id);
-        Task<IList<MedicResult>> ListAsync();
-        Task<MedicResult> UpdateAsync(MedicUpdateInput input);
+        Task<DoctorResult> FindByIdAsync(int id);
+        Task<IList<DoctorResult>> ListAsync();
+        Task<DoctorResult> UpdateAsync(DoctorUpdateInput input);
     }
 }

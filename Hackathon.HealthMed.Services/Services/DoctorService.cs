@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
 using Hackathon.HealthMed.Domain.Entities;
 using Hackathon.HealthMed.Domain.Interfaces.Repositories;
-using Hackathon.HealthMed.Services.Contract.Medic;
+using Hackathon.HealthMed.Services.Contract.Doctor;
 using Hackathon.HealthMed.Services.Input;
 using Hackathon.HealthMed.Services.Interfaces.Services;
 using Hackathon.HealthMed.Services.Result;
@@ -14,23 +14,23 @@ using System.Threading.Tasks;
 
 namespace Hackathon.HealthMed.Services.Services
 {
-    public class MedicService : IMedicService
+    public class DoctorService : IDoctorService
     {
-        private readonly IMedicRepository _medicRepository;
+        private readonly IDoctorRepository _doctorRepository;
         private readonly IMapper _mapper;
         private readonly IBaseNotification _baseNotification;
 
-        public MedicService(IMedicRepository medicRepository, IMapper mapper,
+        public DoctorService(IDoctorRepository doctorRepository, IMapper mapper,
             IBaseNotification baseNotification)
         {
-            _medicRepository = medicRepository;
+            _doctorRepository = doctorRepository;
             _mapper = mapper;
             _baseNotification = baseNotification;
         }
 
-        public async Task<MedicResult> AddAsync(MedicInsertInput input)
+        public async Task<DoctorResult> AddAsync(DoctorInsertInput input)
         {
-            var contract = new AddMedicContract(input);
+            var contract = new AddDoctorContract(input);
 
             if (!contract.IsValid)
             {
@@ -38,15 +38,15 @@ namespace Hackathon.HealthMed.Services.Services
                 return default;
             }
 
-            var map = _mapper.Map<Medic>(input);
+            var map = _mapper.Map<Doctor>(input);
 
-            var result = new MedicResult();
+            var result = new DoctorResult();
 
-            var inserted = await _medicRepository.AddAsync(map);
+            var inserted = await _doctorRepository.AddAsync(map);
 
             if (inserted > 0)
             {
-                result = _mapper.Map<MedicResult>(map);
+                result = _mapper.Map<DoctorResult>(map);
             }
 
             return result;
@@ -55,7 +55,7 @@ namespace Hackathon.HealthMed.Services.Services
         public async Task<bool> DeleteAsync(int id)
         {
             var input = new DeleteInput { Id = id };
-            var contract = new DeleteMedicContract(input);
+            var contract = new DeleteDoctorContract(input);
 
             if (!contract.IsValid)
             {
@@ -63,9 +63,9 @@ namespace Hackathon.HealthMed.Services.Services
                 return default;
             }
 
-            var founded = await _medicRepository.GetByIdAsync(id);
+            var founded = await _doctorRepository.GetByIdAsync(id);
 
-            var contractModel = new FindMedicContract(founded);
+            var contractModel = new FindDoctorContract(founded);
 
             if (!contractModel.IsValid)
             {
@@ -76,26 +76,26 @@ namespace Hackathon.HealthMed.Services.Services
             founded.LastModifiedDate = DateTime.Now;
             founded.Enabled = false;
 
-            return await _medicRepository.UpdateAsync(founded) > 0;
+            return await _doctorRepository.UpdateAsync(founded) > 0;
         }
 
-        public async Task<MedicResult> FindByIdAsync(int id)
+        public async Task<DoctorResult> FindByIdAsync(int id)
         {
-            var result = await _medicRepository.FindByIdAsync(id);
+            var result = await _doctorRepository.FindByIdAsync(id);
 
-            return _mapper.Map<MedicResult>(result);
+            return _mapper.Map<DoctorResult>(result);
         }
 
-        public async Task<IList<MedicResult>> ListAsync()
+        public async Task<IList<DoctorResult>> ListAsync()
         {
-            var result = await _medicRepository.ListAsync();
+            var result = await _doctorRepository.ListAsync();
 
-            return _mapper.Map<IList<MedicResult>>(result);
+            return _mapper.Map<IList<DoctorResult>>(result);
         }
 
-        public async Task<MedicResult> UpdateAsync(MedicUpdateInput input)
+        public async Task<DoctorResult> UpdateAsync(DoctorUpdateInput input)
         {
-            var contract = new UpdateMedicContract(input);
+            var contract = new UpdateDoctorContract(input);
 
             if (!contract.IsValid)
             {
@@ -103,11 +103,11 @@ namespace Hackathon.HealthMed.Services.Services
                 return default;
             }
 
-            var map = _mapper.Map<Medic>(input);
+            var map = _mapper.Map<Doctor>(input);
 
-            var founded = await _medicRepository.GetByIdAsync(map.Id);
+            var founded = await _doctorRepository.GetByIdAsync(map.Id);
 
-            var contractModel = new FindMedicContract(founded);
+            var contractModel = new FindDoctorContract(founded);
 
             if (!contractModel.IsValid)
             {
@@ -122,13 +122,13 @@ namespace Hackathon.HealthMed.Services.Services
             founded.Email = map.Email;
             founded.Enabled = true;
 
-            var result = new MedicResult();
+            var result = new DoctorResult();
 
-            var updated = await _medicRepository.UpdateAsync(founded);
+            var updated = await _doctorRepository.UpdateAsync(founded);
 
             if (updated > 0)
             {
-                result = _mapper.Map<MedicResult>(founded);
+                result = _mapper.Map<DoctorResult>(founded);
             }
 
             return result;

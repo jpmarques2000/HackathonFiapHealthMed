@@ -10,12 +10,12 @@ namespace Hackathon.HealthMed.API.Controllers
     [Authorize]
     [Route("api/v1/[controller]")]
     [ApiController]
-    public class MedicController : BaseController
+    public class DoctorController : BaseController
     {
-        private readonly IMedicService _medicService;
-        public MedicController(IBaseNotification baseNotification, IMedicService medicService) : base(baseNotification)
+        private readonly IDoctorService _doctorService;
+        public DoctorController(IBaseNotification baseNotification, IDoctorService doctorService) : base(baseNotification)
         {
-            _medicService = medicService;
+            _doctorService = doctorService;
         }
 
         /// <summary>
@@ -29,7 +29,7 @@ namespace Hackathon.HealthMed.API.Controllers
         [HttpGet("{id}")]
         public async Task<IActionResult> Get(int id)
         {
-            var result = await _medicService.FindByIdAsync(id);
+            var result = await _doctorService.FindByIdAsync(id);
 
             return OKOrBadRequest(result);
         }
@@ -41,7 +41,7 @@ namespace Hackathon.HealthMed.API.Controllers
         [HttpGet]
         public async Task<IActionResult> Get()
         {
-            var result = await _medicService.ListAsync();
+            var result = await _doctorService.ListAsync();
             return OKOrBadRequest(result);
         }
 
@@ -56,9 +56,9 @@ namespace Hackathon.HealthMed.API.Controllers
         /// Nome do modelo
         /// </remarks>
         [HttpPost]
-        public async Task<IActionResult> Post(MedicInsertInput input)
+        public async Task<IActionResult> Post(DoctorInsertInput input)
         {
-            var result = await _medicService.AddAsync(input);
+            var result = await _doctorService.AddAsync(input);
 
             return CreatedOrBadRequest(result);
         }
@@ -74,9 +74,9 @@ namespace Hackathon.HealthMed.API.Controllers
         /// Id do modelo, Id do fabricante, Novo nome de modelo
         /// </remarks>
         [HttpPut]
-        public async Task<IActionResult> Put(MedicUpdateInput input)
+        public async Task<IActionResult> Put(DoctorUpdateInput input)
         {
-            var result = await _medicService.UpdateAsync(input);
+            var result = await _doctorService.UpdateAsync(input);
 
             return OKOrBadRequest(result);
         }
@@ -92,7 +92,7 @@ namespace Hackathon.HealthMed.API.Controllers
         [HttpDelete]
         public async Task<IActionResult> Delete(int id)
         {
-            var result = await _medicService.DeleteAsync(id);
+            var result = await _doctorService.DeleteAsync(id);
 
             return OKOrBadRequest(result);
         }

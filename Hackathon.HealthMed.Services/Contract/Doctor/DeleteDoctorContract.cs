@@ -6,11 +6,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Hackathon.HealthMed.Services.Contract.Medic
+namespace Hackathon.HealthMed.Services.Contract.Doctor
 {
-    public class DeleteMedicContract : BaseContract<DeleteInput>
+    public class DeleteDoctorContract : BaseContract<DeleteInput>
     {
-        public DeleteMedicContract(DeleteInput input)
+        public DeleteDoctorContract(DeleteInput input)
         {
             Validate(input);
         }
@@ -18,8 +18,8 @@ namespace Hackathon.HealthMed.Services.Contract.Medic
         {
             AddNotifications(new Flunt.Br.Contract()
                 .Requires()
-                .IsNotNull(input.Id, "Medic", "Parameters is null")
-                .IsGreaterThan(input.Id, 0, "Medic", "The Id field must be greater than 0"));
+                .IsNotNull(input.Id, "Doctor", "Parameters is null")
+                .IsGreaterThan(input.Id, 0, "Doctor", "The Id field must be greater than 0"));
         }
     }
 }

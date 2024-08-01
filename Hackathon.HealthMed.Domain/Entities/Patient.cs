@@ -10,5 +10,7 @@ namespace Hackathon.HealthMed.Domain.Entities
     {
         public string Name { get; set; }
         public string CPF { get; set; }
+
+        public int ProfileId { get; set; }
     }
 }

@@ -4,15 +4,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Hackathon.HealthMed.Services.Input
+namespace Hackathon.HealthMed.Domain.Entities
 {
-    public class MedicUpdateInput
+    public class Doctor : Entity
     {
-        public int Id { get; set; }
         public string Name { get; set; }
         public string CPF { get; set; }
         public string CRM { get; set; }
         public string Email { get; set; }
         public string Password { get; set; }
+        public int ProfileId { get; set; }
+        public ICollection<Schedule> Schedules { get; set; }
     }
 }
