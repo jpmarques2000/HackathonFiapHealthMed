@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace Hackathon.HealthMed.Domain.Interfaces.Repositories
 {
-    public interface IMedicRepository : IBaseRepository<Medic>
+    public interface IDoctorRepository : IBaseRepository<Doctor>
     {
-        Task<Medic> FindByIdAsync(int id);
-        Task<IList<Medic>> ListAsync();
+        Task<Doctor> FindByIdAsync(int id);
+        Task<IList<Doctor>> ListAsync();
     }
 }

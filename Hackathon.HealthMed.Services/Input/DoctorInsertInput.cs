@@ -6,12 +6,14 @@ using System.Threading.Tasks;
 
 namespace Hackathon.HealthMed.Services.Input
 {
-    public class MedicInsertInput
+    public class DoctorInsertInput
     {
         public string Name { get; set; }
         public string CPF { get; set; }
         public string CRM { get; set; }
         public string Email { get; set; }
         public string Password { get; set; }
+
+        public int ProfileId { get; set; }
     }
 }

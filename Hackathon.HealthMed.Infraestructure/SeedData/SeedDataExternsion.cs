@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 
-namespace TechChallenge.AutomotiveMechanics.Infrastructure.Data.SeedData
+namespace Hackathon.HealthMed.Infrastructure.Data.SeedData
 {
     public static class SeedDataExternsion
     {

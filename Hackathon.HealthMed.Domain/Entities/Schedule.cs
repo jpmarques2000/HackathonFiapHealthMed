@@ -9,7 +9,7 @@ namespace Hackathon.HealthMed.Domain.Entities
     public class Schedule : Entity
     {
         public string Time { get; set; }
-        public int MedicId { get; set; }
+        public int DoctorId { get; set; }
         public int AppointmentId { get; set; }
         public bool ScheduleTime { get; set; }
     }

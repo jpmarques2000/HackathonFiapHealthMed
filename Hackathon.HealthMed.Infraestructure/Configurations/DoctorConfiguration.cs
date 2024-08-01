@@ -9,11 +9,11 @@ using System.Threading.Tasks;
 
 namespace Hackathon.HealthMed.Infraestructure.Configurations
 {
-    public class MedicConfiguration : IEntityTypeConfiguration<Medic>
+    public class DoctorConfiguration : IEntityTypeConfiguration<Doctor>
     {
-        public void Configure(EntityTypeBuilder<Medic> builder)
+        public void Configure(EntityTypeBuilder<Doctor> builder)
         {
-            builder.ToTable("Medic");
+            builder.ToTable("Doctor");
             builder.Property(e => e.Id).UseIdentityColumn().IsRequired();
             builder.Property(e => e.Name)
                 .IsRequired()
@@ -30,6 +30,7 @@ namespace Hackathon.HealthMed.Infraestructure.Configurations
             builder.Property(e => e.Email)
                 .IsRequired()
                 .HasMaxLength(100);
+            builder.Property(e => e.ProfileId).IsRequired();
             builder.Property(e => e.Enabled).IsRequired().HasDefaultValueSql("(1)");
             builder.Property(e => e.CreatedDate)
                 .HasColumnType("datetime")
