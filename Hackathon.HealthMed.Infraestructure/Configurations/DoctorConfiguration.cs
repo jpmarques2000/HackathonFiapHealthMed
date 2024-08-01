@@ -36,6 +36,12 @@ namespace Hackathon.HealthMed.Infraestructure.Configurations
                 .HasColumnType("datetime")
                 .HasDefaultValueSql("(getdate())");
             builder.Property(e => e.LastModifiedDate);
+
+            builder.HasMany(e => e.Schedules)
+                .WithOne(e => e.Doctor)
+                .HasForeignKey(e => e.DoctorId)
+                .OnDelete(DeleteBehavior.Cascade)
+                .HasConstraintName("FK_Schedule_Doctor");
         }
     }
 }
