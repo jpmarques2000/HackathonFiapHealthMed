@@ -18,8 +18,8 @@ O objetivo deste software é permitir o cadastro de médicos e pacientes, juntam
 	 - Redoc
 	 - Flunt Validation
 	 - Automapper
- - Hosting
-	 - Docker Compose
+ - Database
+	 - SQL Server
 
   - ## Instalação
 Você pode executar o projeto **Health$Med** em qualquer sistema operacional. Certifique-se de ter instalado o Sql Server instalado e o Visual Studio em seu ambiente. 
