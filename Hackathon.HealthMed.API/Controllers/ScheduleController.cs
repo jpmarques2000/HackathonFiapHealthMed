@@ -34,6 +34,22 @@ namespace Hackathon.HealthMed.API.Controllers
         }
 
         /// <summary>
+        /// Obtém horários agendados do paciente
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        /// <remarks>
+        /// Enviar Id para requisição
+        /// </remarks>
+        [HttpGet("appointments")]
+        public async Task<IActionResult> GetPatientAppointments(int id)
+        {
+            var result = await _scheduleService.FindByPatientIdAsync(id);
+
+            return OKOrBadRequest(result);
+        }
+
+        /// <summary>
         /// Cadastrar novo horário para o médico
         /// </summary>
         /// <param name="input"></param>

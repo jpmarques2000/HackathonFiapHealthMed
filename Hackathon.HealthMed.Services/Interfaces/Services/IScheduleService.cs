@@ -12,7 +12,8 @@ namespace Hackathon.HealthMed.Services.Interfaces.Services
     {
         Task<ScheduleResult> AddAsync(ScheduleInsertInput input);
         Task<bool> DeleteAsync(int id);
-        Task<ScheduleResult> FindByMedicIdAsync(int id);
+        Task<IList<ScheduleResult>> FindByMedicIdAsync(int id);
+        Task<IList<ScheduleResult>> FindByPatientIdAsync(int id);
         Task<ScheduleResult> UpdateAsync(ScheduleUpdateInput input);
         Task<ScheduleResult> ScheduleAppointment(ScheduleAppointmentInput input);
     }

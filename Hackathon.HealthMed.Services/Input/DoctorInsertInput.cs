@@ -11,6 +11,7 @@ namespace Hackathon.HealthMed.Services.Input
         public string Name { get; set; }
         public string CPF { get; set; }
         public string CRM { get; set; }
+        //public string Email { get; set; }
 
         public int ProfileId { get; set; }
     }

@@ -17,7 +17,7 @@ namespace Hackathon.HealthMed.Services.Contract.Doctor
         {
             AddNotifications(new Flunt.Br.Contract()
                 .Requires()
-                .IsNotNull(input, "Schedule", "Schedule Time already exists"));
+                .IsNull(input, "Schedule", "Schedule Time already exists"));
         }
     }
 }

@@ -22,11 +22,13 @@ namespace Hackathon.HealthMed.Crosscutting
                 .AddScoped<IBaseNotification, BaseNotification>()
                 .AddScoped<IDoctorRepository, DoctorRepository>()
                 .AddScoped<IPatientRepository, PatientRepository>()
+                .AddScoped<IScheduleRepository, ScheduleRepository>()
                 .AddScoped<IUserRepository, UserRepository>();
                 
             services
                 .AddScoped<IUserService, UserService>()
                 .AddScoped<IDoctorService, DoctorService>()
+                .AddScoped<IScheduleService, ScheduleService>()
                 .AddScoped<IPatientService, PatientService>();
             return services;
         }

@@ -16,14 +16,24 @@ namespace Hackathon.HealthMed.Infraestructure.Repositories
 
         }
 
-        public async Task<Schedule> FindByMedicIdAsync(int id)
+        public async Task<IList<Schedule>> FindByMedicIdAsync(int id)
         {
             var result = await _context.Schedules
                 .Include(x => x.Doctor)
                 .Where(x => x.DoctorId == id)
                 .Where(x => x.Enabled == true)
                 .Where(x => x.isScheduled == false)
-                .FirstOrDefaultAsync();
+                .ToListAsync();
+
+            return result;
+        }
+
+        public async Task<IList<Schedule>> FindByPatientIdAsync(int id)
+        {
+            var result = await _context.Schedules
+                .Where(x => x.PatientId == id)
+                .Where(x => x.Enabled == true)
+                .ToListAsync();
 
             return result;
         }
