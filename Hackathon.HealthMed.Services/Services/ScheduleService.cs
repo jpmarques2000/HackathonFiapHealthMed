@@ -90,11 +90,18 @@ namespace Hackathon.HealthMed.Services.Services
             return await _scheduleRepository.UpdateAsync(founded) > 0;
         }
 
-        public async Task<ScheduleResult> FindByMedicIdAsync(int id)
+        public async Task<IList<ScheduleResult>> FindByMedicIdAsync(int id)
         {
             var result = await _scheduleRepository.FindByMedicIdAsync(id);
 
-            return _mapper.Map<ScheduleResult>(result);
+            return _mapper.Map<IList<ScheduleResult>>(result);
+        }
+
+        public async Task<IList<ScheduleResult>> FindByPatientIdAsync(int id)
+        {
+            var result = await _scheduleRepository.FindByPatientIdAsync(id);
+
+            return _mapper.Map<IList<ScheduleResult>>(result);
         }
 
         public async Task<ScheduleResult> ScheduleAppointment(ScheduleAppointmentInput input)

@@ -40,6 +40,9 @@ namespace Hackathon.HealthMed.Services.Services
 
             var map = _mapper.Map<Doctor>(input);
 
+            map.Email = "TODOIDAOJA";
+            map.Password = "123456543423432423";
+
             var result = new DoctorResult();
 
             var inserted = await _doctorRepository.AddAsync(map);
@@ -119,7 +122,6 @@ namespace Hackathon.HealthMed.Services.Services
             founded.Name = map.Name;
             founded.CPF = map.CPF;
             founded.CRM = map.CRM;
-            founded.Email = map.Email;
             founded.Enabled = true;
 
             var result = new DoctorResult();

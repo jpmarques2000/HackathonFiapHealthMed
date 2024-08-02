@@ -25,10 +25,8 @@ namespace Hackathon.HealthMed.Infraestructure.Configurations
                 .IsRequired()
                 .HasMaxLength(20);
             builder.Property(e => e.Password)
-               .IsRequired()
                .HasMaxLength(100);
             builder.Property(e => e.Email)
-                .IsRequired()
                 .HasMaxLength(100);
             builder.Property(e => e.ProfileId).IsRequired();
             builder.Property(e => e.Enabled).IsRequired().HasDefaultValueSql("(1)");
