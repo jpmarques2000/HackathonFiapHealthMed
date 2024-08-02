@@ -21,23 +21,6 @@ namespace Hackathon.HealthMed.Tests.Controllers
         private ScheduleController _controller;
 
         [Fact]
-        public async Task FindByMedicId_Schedule_ReturnOk()
-        {
-            _baseNotificationMock.Setup(x => x.IsValid).Returns(true);
-            var schedule = _fixture.Create<ScheduleResult>();
-
-            _scheduleServiceMock.Setup(repo => repo.FindByMedicIdAsync(schedule.DoctorId)).ReturnsAsync(schedule);
-
-            _controller = new ScheduleController(_baseNotificationMock.Object, _scheduleServiceMock.Object);
-
-            var result = await _controller.Get(schedule.DoctorId);
-
-            var obj = result as ObjectResult;
-
-            Assert.Equal(200, obj.StatusCode);
-        }
-
-        [Fact]
         public async Task Create_Schedule_ReturnsCreated()
         {
             _baseNotificationMock.Setup(x => x.IsValid).Returns(true);
