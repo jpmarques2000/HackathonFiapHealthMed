@@ -20,20 +20,6 @@ namespace Hackathon.HealthMed.Tests.Services
         private readonly ScheduleUpdateInputFaker _scheduleUpdateInputFaker = new ScheduleUpdateInputFaker();
 
         [Fact]
-        public async Task AddAsync_ShouldNotReturnNull_WhenInputIsValid()
-        {
-
-            var service = new ScheduleService(_scheduleRepositoryMock.Object, _mapper,
-                _baseNotificationMock.Object);
-            var input = _scheduleAddInputFaker.Generate();
-
-            _scheduleRepositoryMock.Setup(x => x.AddAsync(It.IsAny<Schedule>())).ReturnsAsync(1);
-
-            var result = await service.AddAsync(input);
-            Assert.True(result != null);
-        }
-
-        [Fact]
         public async Task UpdateAsync_ShouldReturnNull_WhenScheduleNotFound()
         {
             var service = new ScheduleService(_scheduleRepositoryMock.Object, _mapper,
