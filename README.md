@@ -22,17 +22,16 @@ O objetivo deste software é permitir o cadastro de médicos e pacientes, juntam
 	 - Docker Compose
 
   - ## Instalação
-Você pode executar o projeto **Health$Med** em qualquer sistema operacional. Certifique-se de ter instalado o docker e o Visual Studio em seu ambiente. 
-
-(Obter instalação do Docker) --> https://www.docker.com/products/docker-desktop/
+Você pode executar o projeto **Health$Med** em qualquer sistema operacional. Certifique-se de ter instalado o Sql Server instalado e o Visual Studio em seu ambiente. 
 
 Clone o repositório **HackathonFiapHealthMed** --> git clone https://github.com/jpmarques2000/HackathonFiapHealthMed.git
+
+Altere o arquivo appsettings.json com sua string de conexão do Sql Server
 
 Na solução HealthMed selecione Clean Solution --> Build Solution --> Restore NuGetPackages
 
 Vá para o Package Manager Console na solução Presentation.API.
 
-Execute os seguintes comandos
+Execute o comando
 
-    docker-compose up -d
     update-database
