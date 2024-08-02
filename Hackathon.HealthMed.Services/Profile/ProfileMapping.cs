@@ -17,6 +17,18 @@ namespace Hackathon.HealthMed.Services.Profile
             CreateMap<Patient, PatientResult>().ReverseMap();
             CreateMap<PatientInsertInput, Patient>().ReverseMap();
             CreateMap<PatientUpdateInput, Patient>().ReverseMap();
+
+            CreateMap<Doctor, DoctorResult>().ReverseMap();
+            CreateMap<DoctorInsertInput, Doctor>().ReverseMap();
+            CreateMap<DoctorUpdateInput, Doctor>().ReverseMap();
+
+            CreateMap<Schedule, ScheduleResult>().ReverseMap();
+            CreateMap<ScheduleInsertInput, Schedule>().ReverseMap();
+            CreateMap<ScheduleUpdateInput, Schedule>().ReverseMap();
+            CreateMap<ScheduleAppointmentInput, Schedule>().ReverseMap();
+
+            CreateMap<User, UserResult>().ReverseMap();
+            CreateMap<UserRegisterInput, User>().ReverseMap();
         }
     }
 }

@@ -23,9 +23,7 @@ namespace Hackathon.HealthMed.Services.Contract.Doctor
                 .IsNotNull(input, "Doctor", "Parameters is null")
                 .IsNotNullOrWhiteSpace(input.Name, "Name", "The Name field cannot be empty")
                 .IsNotNullOrWhiteSpace(input.CPF, "CPF", "The CPF field cannot be empty")
-                .IsCpf(input.CPF, "CPF", "The CPF field is invalid")
                 .IsNotNullOrWhiteSpace(input.CRM, "CRM", "The CRM field cannot be empty")
-                .IsNotNullOrWhiteSpace(input.Email, "Email", "The Email field cannot be empty")
                 .IsGreaterThan(input.Name, 3, "Name", "The Name field must be greater than 3"));
         }
     }

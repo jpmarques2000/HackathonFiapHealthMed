@@ -10,8 +10,6 @@ namespace Hackathon.HealthMed.Services.Result
     {
         public int Id { get; set; }
         public string Time { get; set; }
-        public int MedicId { get; set; }
-        public int AppointmentId { get; set; }
-        public bool ScheduleTime { get; set; }
+        public int DoctorId { get; set; }
     }
 }

@@ -6,11 +6,9 @@ using System.Threading.Tasks;
 
 namespace Hackathon.HealthMed.Services.Input
 {
-    public class DoctorUpdateInput
+    public class ScheduleUpdateInput
     {
         public int Id { get; set; }
-        public string Name { get; set; }
-        public string CPF { get; set; }
-        public string CRM { get; set; }
+        public string Time { get; set; }
     }
 }

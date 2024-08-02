@@ -37,6 +37,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hackathon.HealthMed.Crosscu
 EndProject
 Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{903291E6-9E03-42A7-90AB-2DDCCD655DE2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hackathon.HealthMed.Tests", "Tests\Hackathon.HealthMed.Tests\Hackathon.HealthMed.Tests.csproj", "{DBC9DF17-7120-4FEF-8F13-0074AFF7609A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -67,6 +69,10 @@ Global
 		{903291E6-9E03-42A7-90AB-2DDCCD655DE2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{903291E6-9E03-42A7-90AB-2DDCCD655DE2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{903291E6-9E03-42A7-90AB-2DDCCD655DE2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DBC9DF17-7120-4FEF-8F13-0074AFF7609A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DBC9DF17-7120-4FEF-8F13-0074AFF7609A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DBC9DF17-7120-4FEF-8F13-0074AFF7609A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DBC9DF17-7120-4FEF-8F13-0074AFF7609A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -86,6 +92,7 @@ Global
 		{A7D05798-39D5-4A00-93BB-B22E51E0BB3A} = {156A7620-71DA-4FFF-9829-CD60C7B0AC59}
 		{AD7A1008-53C5-4ADE-9E72-BA82371AA3C9} = {2703A8F2-1CAF-4E20-B54D-B5C65E248873}
 		{E9157ADB-873A-4050-AE13-4DBCEB56FFED} = {8AC2F3FC-C3FE-4BE5-9686-018A256EDE38}
+		{DBC9DF17-7120-4FEF-8F13-0074AFF7609A} = {7032C963-73EA-447B-BA19-02FC548E8F72}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A9D197E1-55B2-4035-A6ED-3CC412B422B6}
